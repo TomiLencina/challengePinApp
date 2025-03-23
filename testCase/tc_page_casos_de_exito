@@ -1,0 +1,27 @@
+Test Case: Verificar y validar la página de Casos de Éxito
+
+ID: TC_CasosDeExito_001
+Título: Verificar que la página de Casos de Éxito carga correctamente y muestra todos los elementos esperados.
+Prioridad: Media
+Precondiciones:
+-El usuario tiene acceso al sitio web.
+-El navegador está abierto en la página principal.
+
+Datos de prueba:
+URL esperada: "https://pinapp.tech/casos"
+
+Pasos:
+1) Ingresar a "https://pinapp.tech/"
+2) Ingresar al menu y clickear Casos de Exito
+3) Validar la url esperada
+4)Validar la presencia del titulo "Casos de Exito"
+5) Validar la presencia de 4 productos:
+                    -Agora Pay
+                    -Agora Shop
+                    -Agora Ahorra Mas
+                    -Agora Club
+
+Resultado Esperado:
+El título de la página es visible.
+Hay 4 productos destacados en la página.
+La URL de la página coincide con la esperada.

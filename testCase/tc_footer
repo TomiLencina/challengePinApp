@@ -1,0 +1,36 @@
+Test Case: Validar el Footer de la Página
+
+ID: TC_Footer_001
+Título: Verificar que el footer contiene todos los elementos requeridos.
+Prioridad: Alta
+
+
+Precondiciones:
+-El usuario tiene acceso al sitio web.
+-El navegador está abierto en cualquier página del sitio.
+
+Datos de prueba:
+
+Texto esperado: "¿En qué te podemos ayudar?"
+Redes sociales: LinkedIn, Facebook, Instagram
+Contactos esperados: 2 números de teléfono y 1 email
+
+Pasos:
+
+1) Ingresar a "https://pinapp.tech/"
+2) Navegar a la página que contiene el footer(casos de exito-nosotros-servicios)
+3) Desplazarse hacia el footer de la página.
+4)Verificar que el mensaje "¿En qué te podemos ayudar?" está presente y es visible.
+5)Verificar que existe una caja de texto para que el usuario escriba su consulta.
+6)Verificar que existe un botón de envío para enviar la solicitud de ayuda.
+7)Verificar que están presentes los enlaces a LinkedIn, Facebook e Instagram y
+que son clickeables y redirigen correctamente.
+8)Verificar que existen dos números de teléfono visibles en el footer.
+9)Verificar que hay un email de contacto visible.
+
+Resultado Esperado:
+El footer muestra el mensaje "¿En qué te podemos ayudar?".
+La caja de texto y el botón de envío están presentes y visibles.
+Los enlaces a LinkedIn, Facebook e Instagram están disponibles y clickeables.
+Se muestran correctamente dos teléfonos de contacto.
+Se muestra correctamente un email de contacto.

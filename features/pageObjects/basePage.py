@@ -1,9 +1,7 @@
-from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import *
 
 
 class Locator:
@@ -29,7 +27,7 @@ class Reusable:
     def esperar_clickeable(self, locator):
         try:
             self.fluent_wait(ec.element_to_be_clickable((locator.l_type, locator.selector)))
-        except:
+        except Exception as e:
             assert False, f"Item no disponible para clickear -> {locator.selector}"
 
     def perform_action_on_element(self, locator, action, text=""):
@@ -63,3 +61,19 @@ class Reusable:
     def obtener_url_actual(self):
         # Retorna la URL actual de la página
         return self.driver.current_url
+
+    def get_href(self, locator):
+        """
+        Obtiene el valor del atributo 'href' de un elemento localizado.
+
+        :param locator: Tupla con el tipo de búsqueda y el valor (ej. (By.ID, "miElemento"))
+        :return: URL del atributo 'href' o None si no existe
+        """
+        try:
+            elemento = WebDriverWait(self.driver, 10).until(
+                ec.presence_of_element_located(locator)
+            )
+            return elemento.get_attribute("href")
+        except Exception as e:
+            print(f"Error al obtener href: {e}")
+            return None

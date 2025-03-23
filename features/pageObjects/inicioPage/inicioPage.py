@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from features.pageObjects.basePage import *
 
 
@@ -14,8 +12,8 @@ class HomePinApp(Reusable):
         # BOTONES
         self.menu = Locator(By.XPATH, "//button[@aria-label='menu']")
         self.inicio = Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Inicio')]")
-        self.nosotros =  Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Nosotros')]")
-        self.servicios =  Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Servicios')]")
+        self.nosotros = Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Nosotros')]")
+        self.servicios = Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Servicios')]")
         self.casos_de_exitos = Locator(By.XPATH, "//ul/div//div/span/a[contains(text(),'Casos')]")
 
 

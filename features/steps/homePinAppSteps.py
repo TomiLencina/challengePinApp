@@ -1,8 +1,8 @@
-import time
-
-from behave import given, when, step, then
-from features.pageObjects.inicioPage.inicioPage import HomePinApp  # Importa la clase HomePinApp
 from features.pageObjects.casosExitoPage.casosExitosPage import CasosDeExitoPage
+from features.pageObjects.inicioPage.inicioPage import HomePinApp
+from features.pageObjects.footerPage.footerPage import FooterPage
+from behave import given, when, step
+
 
 @given('El usuario ingresa a PinApp')
 def step_impl(context):
@@ -13,14 +13,20 @@ def step_impl(context):
 
 @when('El usuario hace click en el menu')
 def step_impl(context):
-    home_pin_app = HomePinApp(context.driver)
-    home_pin_app.click_menu()
+    try:
+        home_pin_app = HomePinApp(context.driver)
+        home_pin_app.click_menu()
+    except Exception as e:
+        assert False, f'Error al seleccionar el menu, {e}'
 
 
 @step('el usuario selecciona la opcion {opcion_menu}')
 def step_impl(context, opcion_menu):
-    home_pin_app = HomePinApp(context.driver)
-    home_pin_app.click_opcion_menu(opcion_menu)
+    try:
+        home_pin_app = HomePinApp(context.driver)
+        home_pin_app.click_opcion_menu(opcion_menu)
+    except Exception as e:
+        assert False, f'Error al seleccionar la opcion de menu, {e}'
 
 
 @step('el usuario valida la pantalla de casos de exito')
@@ -31,3 +37,20 @@ def step_impl(context):
     except Exception as e:
         assert False, f'Error al validar los elementos de la page, {e}'
 
+
+@step('el usuario valida la presencia de los elementos del footer')
+def step_impl(context):
+    try:
+        footer_page = FooterPage(context.driver)
+        footer_page.validar_presencia_elementos_footer()
+    except Exception as e:
+        assert False, f'Error al validar los elementos de la page, {e}'
+
+
+@step('el usuario valida la redireccion a las redes sociales')
+def step_impl(context):
+    try:
+        footer_page = FooterPage(context.driver)
+        footer_page.validar_redireccion_redes_sociales()
+    except Exception as e:
+        assert False, f'Error al validar los elementos de la page, {e}'

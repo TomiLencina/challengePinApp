@@ -6,7 +6,7 @@ Contenido:
 - Pruebas funcionales automatizadas para la web de PinApp, donde pude encontrar bugs y reportarlos.
 - Pruebas funcionales y de integracion para la API de Rick And Morty.
 
-# PRUEBAS AUTOMATIZADAS
+# PRUEBAS AUTOMATIZADAS WEB
 - Utilice arquitectura POM
 - El desarrollo esta hecho en pyhon, utilizando gherkin y cucumber.
 - Reportes de ejecucion en allure, se pueden visualizar el archivo html en Allure-report, o desde la terminal con el comando "allure serve report/"

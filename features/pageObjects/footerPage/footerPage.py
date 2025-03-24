@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from features.pageObjects.basePage import *
 
@@ -30,6 +32,7 @@ class FooterPage(Reusable):
 
 
     def validar_presencia_elementos_footer(self):
+        time.sleep(2)
         #SCROLLEAR HASTA EL FOOTER
         super().perform_action_on_element(self.texto_footer, 'scroll')
 
@@ -67,7 +70,7 @@ class FooterPage(Reusable):
                                                                 f'es  {self.instagram_url}'
 
 
-        """url_redireccion_facebook = super().get_href((self.facebook.l_type, self.facebook.selector))
+        url_redireccion_facebook = super().get_href((self.facebook.l_type, self.facebook.selector))
         assert url_redireccion_facebook == self.facebook_url, f'No coinciden las URL, la URL esperada para facebook es' \
                                                               f' {self.facebook_url}'
-        """
+

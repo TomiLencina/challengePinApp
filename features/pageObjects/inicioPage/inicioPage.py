@@ -21,6 +21,7 @@ class HomePinApp(Reusable):
         self.driver.get(self.url)  # Método para abrir la URL de la aplicación
 
     def click_menu(self):
+        super().esperar_clickeable(self.menu)
         super().elemento_cargado_en_web(self.menu)
         super().perform_action_on_element(self.menu, 'click')
 
@@ -28,18 +29,22 @@ class HomePinApp(Reusable):
         opcion_menu = opcion.lower()
 
         if opcion_menu == 'inicio':
+            super().esperar_clickeable(self.inicio)
             super().elemento_cargado_en_web(self.inicio)
             super().perform_action_on_element(self.inicio, 'click')
 
         elif opcion_menu == 'nosotros':
+            super().esperar_clickeable(self.nosotros)
             super().elemento_cargado_en_web(self.nosotros)
             super().perform_action_on_element(self.nosotros, 'click')
 
         elif opcion_menu == 'servicios':
+            super().esperar_clickeable(self.servicios)
             super().elemento_cargado_en_web(self.servicios)
             super().perform_action_on_element(self.servicios, 'click')
 
         elif opcion_menu == 'casos de exito':
+            super().esperar_clickeable(self.casos_de_exitos)
             super().elemento_cargado_en_web(self.casos_de_exitos)
             super().perform_action_on_element(self.casos_de_exitos, 'click')
         else:

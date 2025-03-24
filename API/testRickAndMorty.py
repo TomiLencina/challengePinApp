@@ -119,7 +119,7 @@ def test_get_episodio_inexistente():
 
 # Test 7: Verificar que un personaje está asociado correctamente a los episodios
 def test_integracion_personaje_y_episodios():
-    id_personaje = 1  # Usamos el ID de Rick Sanchez
+    id_personaje = 1
 
     # Obtener los detalles del personaje
     response_personaje = get_personaje(id_personaje)
